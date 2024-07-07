@@ -2,6 +2,7 @@ package com.resena.resena.restaurante;
 
 import com.resena.resena.categoria.Categoria;
 import com.resena.resena.imagen.Imagen;
+import com.resena.resena.resena.Resena;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -38,6 +39,9 @@ public class Restaurante {
 
     @OneToMany(targetEntity = Imagen.class, fetch = FetchType.LAZY, mappedBy = "restaurante")
     private List<Imagen> imagenList;
+
+    @OneToMany(targetEntity = Resena.class, fetch = FetchType.LAZY, mappedBy = "restaurante")
+    private List<Restaurante> restauranteList;
 
 
 }

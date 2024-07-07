@@ -1,10 +1,14 @@
 package com.resena.resena.resena;
 
+import com.resena.resena.imagen.Imagen;
+import com.resena.resena.restaurante.Restaurante;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Entity
 @Table
@@ -42,5 +46,13 @@ public class Resena {
 
     @Column(name = "comentario")
     private String comentario;
+
+    @ManyToOne
+    @JoinColumn(name = "id_restaurante")
+    private Restaurante restaurante;
+
+    @OneToMany(targetEntity = Imagen.class, fetch = FetchType.LAZY, mappedBy = "resena")
+    private List<Imagen> imagenList;
+
 
 }
