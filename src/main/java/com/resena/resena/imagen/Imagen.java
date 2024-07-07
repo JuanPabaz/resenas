@@ -1,5 +1,6 @@
 package com.resena.resena.imagen;
 
+import com.resena.resena.resena.Resena;
 import com.resena.resena.restaurante.Restaurante;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -26,4 +27,8 @@ public class Imagen {
     @ManyToOne
     @JoinColumn(name = "id_restaurante")
     private Restaurante restaurante;
+
+    @ManyToOne
+    @JoinColumn(name = "id_resena")
+    private Resena resena;
 }
