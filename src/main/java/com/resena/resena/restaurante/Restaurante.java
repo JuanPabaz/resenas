@@ -1,5 +1,6 @@
 package com.resena.resena.restaurante;
 
+import com.resena.resena.categoria.Categoria;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -27,6 +28,10 @@ public class Restaurante {
 
     @Column(name = "telefono")
     private String telefono;
+
+    @ManyToOne
+    @JoinColumn(name = "categoria_id")
+    private Categoria categoria;
 
 
 }
