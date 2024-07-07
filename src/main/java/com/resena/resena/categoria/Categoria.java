@@ -26,7 +26,7 @@ public class Categoria {
     @Column(name = "categoria")
     private String categoria;
 
-    @Column(name = "descripcion")
+    @Column(name = "descripcion" , columnDefinition = "TEXT")
     private String descripcion;
 
     @OneToMany(targetEntity = Restaurante.class, fetch = FetchType.LAZY, mappedBy = "categoria")
