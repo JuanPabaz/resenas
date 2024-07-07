@@ -1,5 +1,6 @@
 package com.resena.resena.categoria;
 
+import com.resena.resena.imagen.Imagen;
 import com.resena.resena.restaurante.Restaurante;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -30,4 +31,8 @@ public class Categoria {
 
     @OneToMany(targetEntity = Restaurante.class, fetch = FetchType.LAZY, mappedBy = "categoria")
     private List<Restaurante> restaurantes;
+
+    @OneToOne
+    @JoinColumn(name = "id_imagen")
+    private Imagen imagenCategoria;
 }
