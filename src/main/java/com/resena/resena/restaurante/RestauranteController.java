@@ -16,7 +16,7 @@ public class RestauranteController {
     private RestauranteServiceImpl restauranteService;
 
     @GetMapping("/find_all_restaurante")
-    public Optional<List<Restaurante>> findAllRestaurante(){
+    public Optional<List<RestauranteDTO>> findAllRestaurante(){
         return restauranteService.findAllRestaurante();
     }
 

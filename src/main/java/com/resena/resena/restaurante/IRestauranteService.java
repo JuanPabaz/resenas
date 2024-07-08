@@ -5,6 +5,6 @@ import java.util.Optional;
 
 public interface IRestauranteService {
 
-    Optional<List<Restaurante>> findAllRestaurante();
+    Optional<List<RestauranteDTO>> findAllRestaurante();
 
 }

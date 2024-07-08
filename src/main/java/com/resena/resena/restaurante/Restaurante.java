@@ -41,7 +41,7 @@ public class Restaurante {
     private List<Imagen> imagenList;
 
     @OneToMany(targetEntity = Resena.class, fetch = FetchType.LAZY, mappedBy = "restaurante")
-    private List<Restaurante> restauranteList;
+    private List<Resena> resenaList;
 
 
 }
